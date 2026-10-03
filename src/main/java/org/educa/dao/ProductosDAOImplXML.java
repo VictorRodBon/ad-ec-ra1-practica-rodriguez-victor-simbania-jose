@@ -4,7 +4,6 @@ import generated.Producto;
 import generated.Productos;
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
-import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
 import org.educa.entity.ProductoEntity;
 import org.xml.sax.SAXException;
@@ -39,7 +38,7 @@ public class ProductosDAOImplXML implements ProductosDAO{
     }
 
     @Override
-    public void escribirProductos(List<ProductoEntity> productos) throws JAXBException, SAXException {
+    public void escribirProductos(List<ProductoEntity> productos, String path, String content) throws JAXBException, SAXException {
 
     }
 }
