@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ProductosDAOImplXML implements ProductosDAO{
     @Override
-    public List<Producto> getProductos(String pathXml, String pathXsd) throws JAXBException, SAXException {
+    public List<Producto> getProductos(String pathXml, String pathXsd) throws JAXBException {
         File xml = new File(pathXml);
         File xsd = new File(pathXsd);
 
@@ -24,8 +24,14 @@ public class ProductosDAOImplXML implements ProductosDAO{
         Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 
         // Asignar el esquema XSD
-        unmarshaller.setSchema(SchemaFactory.newInstance(
+
+        try {
+
+            unmarshaller.setSchema(SchemaFactory.newInstance(
                 XMLConstants.W3C_XML_SCHEMA_NS_URI).newSchema(xsd));
+        } catch (SAXException e) {
+            throw new RuntimeException(e);
+        }
 
         // Si hay un error contra el XSD, saltará una JAXBException directamente
         Productos productos = (Productos) unmarshaller.unmarshal(xml);

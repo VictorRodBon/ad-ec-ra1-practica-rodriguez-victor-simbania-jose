@@ -1,6 +1,8 @@
 package org.educa.service;
 
 import jakarta.xml.bind.JAXBException;
+import org.educa.dao.ProductosDAO;
+import org.educa.dao.ProductosDAOImplXML;
 import org.educa.entity.ProductoEntity;
 
 import java.io.IOException;
@@ -10,11 +12,9 @@ import java.util.List;
 
 import generated.Producto;
 
-private static final String fileXSD = "src/main/resources/xsd/inventario_junio2026.xsd";
-
-private final ProductosDAO productosDAO = new ProductosDAOImplXML();
-
 public class ProductoService {
+    private static final String fileXSD = "src/main/resources/xsd/inventario_junio2026.xsd";
+    private final ProductosDAO productosDAO = new ProductosDAOImplXML();
 
     public List<ProductoEntity> readFile(String fileXml) throws JAXBException {
         List<Producto> productos = productosDAO.getProductos(fileXml, fileXSD);
@@ -34,7 +34,7 @@ public class ProductoService {
     }
 
     private List<ProductoEntity> setProductEntity(List<Producto> productos){
-        List<ProductoEntity> listaProductos = List.of();
+        List<ProductoEntity> listaProductos = new java.util.ArrayList<>();
 
 
         for (Producto p : productos) {
