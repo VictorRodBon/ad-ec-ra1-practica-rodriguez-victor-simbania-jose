@@ -13,10 +13,10 @@ public class Activity1 {
         //Leer el fichero XML
         ProductoService productoService = new ProductoService();
         try {
-            List<ProductoEntity> vehiculos = productoService.readFile(FILE_XML);
-            for (ProductoEntity vehiculo : vehiculos) {
+            List<ProductoEntity> productos = productoService.readFile(FILE_XML);
+            for (ProductoEntity producto : productos) {
                 //Pintar por consola
-                System.out.println(vehiculo.toPrint());
+                System.out.println(producto.toPrint());
             }
         } catch (JAXBException e) {
             throw new RuntimeException(e);
