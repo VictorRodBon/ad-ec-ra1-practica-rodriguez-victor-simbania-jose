@@ -14,12 +14,18 @@ public class ProductosDAOImplTXT implements ProductosDAO{
     private static final String PATH = "src/main/resources/export/result_";
 
     @Override
-    public List<Producto> getProductos(String pathXml, String pathXsd) throws JAXBException {
+    public List<Producto> getProductos(String pathXml, String pathXsd) {
         return null;
     }
 
+    /**
+     *
+     * @param productos Lista de productos obtenida del XML
+     * @param pathXML Ruta del fichero XML
+     * @param content Contenido a introducir en el fichero txt
+     */
     @Override
-    public void escribirProductos(List<ProductoEntity> productos, String pathXML, String content) throws JAXBException, SAXException {
+    public void escribirProductos(List<ProductoEntity> productos, String pathXML, String content){
         String date = pathXML.split(".")[0].split("_")[1];
 
         File f = new File(PATH+date+".txt");
