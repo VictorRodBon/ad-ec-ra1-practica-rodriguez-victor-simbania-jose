@@ -21,13 +21,10 @@ public class ProductosDAOImplTXT implements ProductosDAO{
     /**
      *
      * @param productos Lista de productos obtenida del XML
-     * @param pathXML Ruta del fichero XML
      * @param content Contenido a introducir en el fichero txt
      */
     @Override
-    public void escribirProductos(List<ProductoEntity> productos, String pathXML, String content){
-        String date = pathXML.split(".")[0].split("_")[1];
-
+    public void escribirProductos(String date, String content){
         File f = new File(PATH+date+".txt");
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))){

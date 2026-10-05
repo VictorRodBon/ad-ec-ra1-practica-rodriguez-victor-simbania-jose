@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface ProductosDAO {
     List<Producto> getProductos(String pathXml, String pathXsd) throws JAXBException;
-    void escribirProductos(List<ProductoEntity> productos, String path, String content) throws JAXBException, SAXException;
+    void escribirProductos(String path, String content) throws JAXBException, SAXException;
 }

@@ -38,7 +38,7 @@ public class ProductosDAOImplXML implements ProductosDAO{
     }
 
     @Override
-    public void escribirProductos(List<ProductoEntity> productos, String path, String content) throws JAXBException, SAXException {
+    public void escribirProductos(String path, String content) throws JAXBException, SAXException {
 
     }
 }
