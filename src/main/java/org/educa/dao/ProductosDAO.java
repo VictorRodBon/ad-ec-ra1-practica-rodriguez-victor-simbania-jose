@@ -5,9 +5,10 @@ import jakarta.xml.bind.JAXBException;
 import org.educa.entity.ProductoEntity;
 import org.xml.sax.SAXException;
 
+import java.io.IOException;
 import java.util.List;
 
 public interface ProductosDAO {
     List<Producto> getProductos(String pathXml, String pathXsd) throws JAXBException;
-    void escribirProductos(String path, String content) throws JAXBException, SAXException;
+    void escribirProductos(String path, String content) throws JAXBException, SAXException, IOException;
 }

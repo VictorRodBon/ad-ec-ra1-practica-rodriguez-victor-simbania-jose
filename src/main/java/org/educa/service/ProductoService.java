@@ -2,6 +2,7 @@ package org.educa.service;
 
 import jakarta.xml.bind.JAXBException;
 import org.educa.dao.ProductosDAO;
+import org.educa.dao.ProductosDAOImplTXT;
 import org.educa.dao.ProductosDAOImplXML;
 import org.educa.entity.ProductoEntity;
 
@@ -11,13 +12,15 @@ import java.text.ParseException;
 import java.util.List;
 
 import generated.Producto;
+import org.xml.sax.SAXException;
 
 public class ProductoService {
     private static final String fileXSD = "src/main/resources/xsd/inventario_junio2026.xsd";
-    private final ProductosDAO productosDAO = new ProductosDAOImplXML();
+    private final ProductosDAO productosDAOxml = new ProductosDAOImplXML();
+    private final ProductosDAO productosDAOtxt = new ProductosDAOImplTXT();
 
     public List<ProductoEntity> readFile(String fileXml) throws JAXBException {
-        List<Producto> productos = productosDAO.getProductos(fileXml, fileXSD);
+        List<Producto> productos = productosDAOxml.getProductos(fileXml, fileXSD);
 
         List<ProductoEntity> listaProductos = setProductEntity(productos);
 
@@ -25,19 +28,22 @@ public class ProductoService {
     }
 
     public void exportSummary(String path, String fileXml) throws JAXBException, IOException {
-        String date = fileXml.split(".")[0].split("_")[1];
+        String date = fileXml.split("\\.")[0].split("_")[1];
         StringBuilder contenidoFichero = new StringBuilder();
 
         try {
             List<ProductoEntity> productos = readFile(fileXml);
-            for (ProductoEntity prodcuto : productos) {
-                contenidoFichero.append(producto.toPrint).append("\n");
+            for (ProductoEntity producto : productos) {
+                contenidoFichero.append(producto.toPrint()).append("\n");
             }
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }
-
-        productosDAO.escribirProductos(contenidoFichero.toString(), path);
+        try {
+            productosDAOtxt.escribirProductos(date,contenidoFichero.toString());
+        } catch (SAXException e) {
+            System.out.println(e.getMessage());
+        }
 
     }
 
