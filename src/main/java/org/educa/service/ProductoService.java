@@ -25,7 +25,19 @@ public class ProductoService {
     }
 
     public void exportSummary(String path, String fileXml) throws JAXBException, IOException {
-        //TODO: Implementar
+        String date = fileXml.split(".")[0].split("_")[1];
+        StringBuilder contenidoFichero = new StringBuilder();
+
+        try {
+            List<ProductoEntity> productos = readFile(fileXml);
+            for (ProductoEntity prodcuto : productos) {
+                contenidoFichero.append(producto.toPrint).append("\n");
+            }
+        } catch (JAXBException e) {
+            throw new RuntimeException(e);
+        }
+
+        productosDAO.escribirProductos(contenidoFichero.toString(), path);
 
     }
 
