@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6649b682-827c-4dca-af31-b4701d3b00f4" name="Changes" comment="" />
+    <list default="true" id="6649b682-827c-4dca-af31-b4701d3b00f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/educa/dao/ProductosDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/educa/dao/ProductosDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/educa/dao/ProductosDAOImplTXT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/educa/dao/ProductosDAOImplTXT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/educa/dao/ProductosDAOImplXML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/educa/dao/ProductosDAOImplXML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/educa/service/ProductoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/educa/service/ProductoService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,61 +27,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="1.7930640445413347E-221" />
-      <entry key="S10" value="7.407459758844493E-111" />
-      <entry key="S30" value="6.1811605753313304E-37" />
-      <entry key="S60" value="2.798773594961673E-18" />
-      <entry key="M2" value="8.0329680584018E-9" />
-      <entry key="M5" value="0.005621164838456518" />
-      <entry key="M10" value="0.6661858935185807" />
-      <entry key="M15" value="3.5728800007839916" />
-      <entry key="M30" value="20.894857095071114" />
-      <entry key="H1" value="53.08107797023756" />
-      <entry key="H2" value="85.98150083016567" />
-      <entry key="H4" value="109.9292267068842" />
-      <entry key="D1" value="135.2389959204459" />
-      <entry key="W1" value="140.1614161192616" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000000003526" />
-      <entry key="S5" value="1.000012816486998" />
-      <entry key="S10" value="1.0047913535802193" />
-      <entry key="S30" value="1.2639859557340904" />
-      <entry key="S60" value="1.7253463125037363" />
-      <entry key="M2" value="2.203918584812829" />
-      <entry key="M5" value="2.634394415687809" />
-      <entry key="M10" value="3.0271016242744984" />
-      <entry key="M15" value="3.976288469765823" />
-      <entry key="M30" value="8.79618099620302" />
-      <entry key="H1" value="16.873273215166925" />
-      <entry key="H2" value="24.632495933846954" />
-      <entry key="H4" value="30.09014302613571" />
-      <entry key="D1" value="35.73129417034204" />
-      <entry key="W1" value="36.815649083975664" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.000000000000077" />
+      <entry key="S30" value="1.000042569059275" />
+      <entry key="S60" value="1.0067254167821753" />
+      <entry key="M2" value="1.1311758645576095" />
+      <entry key="M5" value="4.43048563318372" />
+      <entry key="M10" value="16.551386905110338" />
+      <entry key="M15" value="28.125434009937138" />
+      <entry key="M30" value="49.81565650440192" />
+      <entry key="H1" value="67.44344625859546" />
+      <entry key="H2" value="82.39277047454517" />
+      <entry key="H4" value="108.08275721358437" />
+      <entry key="D1" value="195.04725134439872" />
+      <entry key="W1" value="226.873368876239" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.8603323918117774E-173" />
+      <entry key="S2" value="6.567463034448028E-44" />
+      <entry key="S5" value="5.332846151466436E-18" />
+      <entry key="S10" value="2.3092955963813807E-9" />
+      <entry key="S30" value="0.001321782030390233" />
+      <entry key="S60" value="0.03636131029032084" />
+      <entry key="M2" value="0.20015459000415597" />
+      <entry key="M5" value="1.6169309315512634" />
+      <entry key="M10" value="6.498168719009867" />
+      <entry key="M15" value="11.00508612950524" />
+      <entry key="M30" value="19.11264533613945" />
+      <entry key="H1" value="25.447927538871816" />
+      <entry key="H2" value="30.458611438341137" />
+      <entry key="H4" value="37.91151245801376" />
+      <entry key="D1" value="61.1312006102941" />
+      <entry key="W1" value="69.41280683221088" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="3.862782574372188E-5" />
-      <entry key="MS500" value="0.13103280943961612" />
-      <entry key="S2" value="0.6016515129999127" />
-      <entry key="S5" value="0.8160994787041037" />
-      <entry key="S10" value="0.9075511276818243" />
-      <entry key="S30" value="1.2193642493224255" />
-      <entry key="S60" value="1.6930346820587718" />
-      <entry key="M2" value="2.1826225347723534" />
-      <entry key="M5" value="2.629631033303281" />
-      <entry key="M10" value="3.6858967277547228" />
-      <entry key="M15" value="7.539041322789694" />
-      <entry key="M30" value="29.671853096447848" />
-      <entry key="H1" value="69.93260748257484" />
-      <entry key="H2" value="110.59720808153361" />
-      <entry key="H4" value="140.00887884575565" />
-      <entry key="D1" value="170.96817864036373" />
-      <entry key="W1" value="176.97675357372503" />
+      <entry key="MS100" value="0.7526233737055336" />
+      <entry key="MS500" value="0.9447470409972061" />
+      <entry key="S2" value="0.9858909615070789" />
+      <entry key="S5" value="0.9943323153899832" />
+      <entry key="S10" value="0.9971621329588053" />
+      <entry key="S30" value="1.00035857867122" />
+      <entry key="S60" value="1.0417911765719603" />
+      <entry key="M2" value="1.3285801865004738" />
+      <entry key="M5" value="6.0332595969294145" />
+      <entry key="M10" value="23.016834904254623" />
+      <entry key="M15" value="39.091591959735055" />
+      <entry key="M30" value="68.89225728931197" />
+      <entry key="H1" value="92.86644287592355" />
+      <entry key="H2" value="112.8359623468699" />
+      <entry key="H4" value="145.98408799972208" />
+      <entry key="D1" value="256.1753976336728" />
+      <entry key="W1" value="296.2856691731656" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -86,78 +93,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Activity1.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "Merging ejercicio1",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/victor/DAM/ad-ec-ra1-practica-rodriguez-victor-simbania-jose",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Activity1.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;victor&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/victor/DAM/ad-ec-ra1-practica-rodriguez-victor-simbania-jose&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.jshint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.jshint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="ad-ec-ra1-practica-rodriguez-victor-simbania-jose" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="ad-ec-ra1-practica-rodriguez-victor-simbania-jose" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="ad-ec-ra1-practica-rodriguez-victor-simbania-jose" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="ad-ec-ra1-practica-rodriguez-victor-simbania-jose" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="DEBUG_JUST_MY_CODE" value="false" />
-      <option name="RUN_TOOL" value="" />
-      <method v="2" />
-    </configuration>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.educa.dao" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
