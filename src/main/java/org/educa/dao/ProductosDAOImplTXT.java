@@ -37,7 +37,6 @@ public class ProductosDAOImplTXT implements ProductosDAO{
             f.getParentFile().mkdirs();
         }
 
-        // Escribir usando UTF-8 explícito (disponible en Java 11+)
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(f, StandardCharsets.UTF_8))) {
             SummaryEntity c = (SummaryEntity) content;
             bw.write(c.toPrint());

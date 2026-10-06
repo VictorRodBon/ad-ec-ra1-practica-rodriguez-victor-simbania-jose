@@ -1,6 +1,6 @@
 Fecha: junio2026
 NumeroDeVehiculos: 5
-BeneficioTotal: 0
+BeneficioTotal: 1223.73
 Ruta del Fichero: src/main/resources/xml/inventario_junio2026.xml
 Nombre del Fichero: inventario_junio2026
-Tamaño del Fichero: 3903 bytes
+Tamaño del Fichero: 3797 bytes

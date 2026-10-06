@@ -4,6 +4,7 @@ import generated.Productos;
 import jakarta.xml.bind.JAXBException;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.educa.entity.ProductoParaExcelEntity;
 import org.xml.sax.SAXException;
 
 import java.io.FileOutputStream;
@@ -73,7 +74,7 @@ public class ProductosDAOImplXLSX implements ProductosDAO{
             }
              int rowIndex = 1;
             //Introducir datos en celda
-            for (ProductoParaExcel producto : productos) {
+            for (ProductoParaExcelEntity producto : productos) {
                 Row row = sheet.createRow(rowIndex);
                 boolean esImpar = (rowIndex % 2 != 0);
 
@@ -89,32 +90,32 @@ public class ProductosDAOImplXLSX implements ProductosDAO{
 
                 //Datos de las celdad de la tercera columna
                 Cell cellPrecio = row.createCell(2);
-                cellPrecio.setCellValue(producto.getPrecio());
+                cellPrecio.setCellValue(producto.getPrecio().doubleValue());
                 cellPrecio.setCellStyle(esImpar ? dataOddStyle : dataEvenStyle);
 
                 //Datos de las celdad de la cuarta columna
                 Cell cellDescuento = row.createCell(3);
-                cellDescuento.setCellValue(producto.getDescuento());
+                cellDescuento.setCellValue(producto.getDescuento().doubleValue());
                 cellDescuento.setCellStyle(esImpar ? dataOddStyle : dataEvenStyle);
 
                 //Datos de las celdad de la quinta columna
                 Cell cellPrecioFinal = row.createCell(4);
-                cellPrecioFinal.setCellValue(producto.getPrecioFinal());
+                cellPrecioFinal.setCellValue(producto.getPrecioFinal().doubleValue());
                 cellPrecioFinal.setCellStyle(esImpar ? dataOddStyle : dataEvenStyle);
 
                 //Datos de las celdad de la sexta columna
                 Cell cellCostesEnvio = row.createCell(5);
-                cellCostesEnvio.setCellValue(producto.getCostesEnvio());
+                cellCostesEnvio.setCellValue(producto.getCostesEnvio().doubleValue());
                 cellCostesEnvio.setCellStyle(esImpar ? dataOddStyle : dataEvenStyle);
 
                 //Datos de las celdad de la septima columna
                 Cell cellCostesAlmacenaje = row.createCell(6);
-                cellCostesAlmacenaje.setCellValue(producto.getCostesAlmacenaje());
+                cellCostesAlmacenaje.setCellValue(producto.getCostesAlmacenaje().doubleValue());
                 cellCostesAlmacenaje.setCellStyle(esImpar ? dataOddStyle : dataEvenStyle);
 
                 //Datos de las celdad de la octava columna
                 Cell cellBeneficio = row.createCell(7);
-                cellBeneficio.setCellValue(producto.getBeneficio());
+                cellBeneficio.setCellValue(producto.getBeneficio().doubleValue());
                 cellBeneficio.setCellStyle(esImpar ? dataOddStyle : dataEvenStyle);
                 rowIndex++;
             }
