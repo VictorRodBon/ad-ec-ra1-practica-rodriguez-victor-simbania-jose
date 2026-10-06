@@ -1,8 +1,10 @@
 package org.educa.dao;
 
 import generated.Producto;
+import generated.Productos;
 import jakarta.xml.bind.JAXBException;
 import org.educa.entity.ProductoEntity;
+import org.educa.entity.SummaryEntity;
 import org.xml.sax.SAXException;
 
 import java.io.*;
@@ -15,7 +17,7 @@ public class ProductosDAOImplTXT implements ProductosDAO{
     private static final String PATH = "src/main/resources/export/result_";
 
     @Override
-    public List<Producto> getProductos(String pathXml, String pathXsd) {
+    public Productos getProductos(String pathXml, String pathXsd) {
         return null;
     }
 
@@ -25,8 +27,9 @@ public class ProductosDAOImplTXT implements ProductosDAO{
      * @param content Contenido a introducir en el fichero txt
      */
     @Override
-    public void escribirProductos(String date, String content) throws IOException{
+    public void escribirProductos(String date, Object content) throws IOException{
         File f = new File(PATH+date+".txt");
+
 
         System.out.println("Fichero creado");
 
@@ -36,7 +39,8 @@ public class ProductosDAOImplTXT implements ProductosDAO{
 
         // Escribir usando UTF-8 explícito (disponible en Java 11+)
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(f, StandardCharsets.UTF_8))) {
-            bw.write(content);
+            SummaryEntity c = (SummaryEntity) content;
+            bw.write(c.toPrint());
         }
     }
 }

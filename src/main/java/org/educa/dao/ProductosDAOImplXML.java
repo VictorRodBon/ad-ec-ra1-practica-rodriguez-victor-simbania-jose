@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ProductosDAOImplXML implements ProductosDAO{
     @Override
-    public List<Producto> getProductos(String pathXml, String pathXsd) throws JAXBException {
+    public Productos getProductos(String pathXml, String pathXsd) throws JAXBException {
         File xml = new File(pathXml);
         File xsd = new File(pathXsd);
 
@@ -34,11 +34,11 @@ public class ProductosDAOImplXML implements ProductosDAO{
 
         // Si hay un error contra el XSD, saltará una JAXBException directamente
         Productos productos = (Productos) unmarshaller.unmarshal(xml);
-        return productos.getProducto();
+        return productos;
     }
 
     @Override
-    public void escribirProductos(String path, String content) throws JAXBException, SAXException {
+    public void escribirProductos(String path, Object content) throws JAXBException, SAXException {
 
     }
 }
