@@ -1,5 +1,6 @@
 package org.educa.service;
 
+import generated.Productos;
 import jakarta.xml.bind.JAXBException;
 import org.educa.dao.ProductosDAO;
 import org.educa.dao.ProductosDAOImplTXT;
@@ -10,21 +11,24 @@ import java.io.File;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 import generated.Producto;
+import org.educa.entity.ProductoParaExcelEntity;
 import org.educa.entity.SummaryEntity;
 import org.xml.sax.SAXException;
 
 public class ProductoService {
-    private static final String fileXSD = "src/main/resources/xsd/inventario_junio2026.xsd";
+    private static final String FILE_XSD = "src/main/resources/xsd/inventario_junio2026.xsd";
     private final ProductosDAO productosDAOxml = new ProductosDAOImplXML();
     private final ProductosDAO productosDAOtxt = new ProductosDAOImplTXT();
+    private final ProductosDAO productosDAOxlsx = new ProductosDAOImplXLSX();
 
     public List<ProductoEntity> readFile(String fileXml) throws JAXBException {
-        List<Producto> productos = productosDAOxml.getProductos(fileXml, fileXSD);
+        Productos productos = productosDAOxml.getProductos(fileXml, FILE_XSD);
 
-        List<ProductoEntity> listaProductos = setProductEntity(productos);
+        List<ProductoEntity> listaProductos = setProductEntity(productos.getProducto());
 
         return listaProductos;
     }
@@ -48,12 +52,7 @@ public class ProductoService {
         File f = new File(fileXml);
         String name = f.getName().split("\\.")[0];
         long size = f.length();
-//        contenidoFichero.append("Fecha: ").append(date).append("\n").
-//                append("Numero de productos: ").append(numeroProductos).append("\n").
-//                append("Beneficio total: ").append().append("\n").
-//                append("Ruta del fichero: ").append(fileXml).append("\n").
-//                append("Nombre del fichero: ").append(name).append("\n").
-//                append("Tamaño del fichero: ").append(size).append("bytes");
+
         SummaryEntity summary = new SummaryEntity(date, numeroProductos, beneficioTotal, fileXml, name, size);
 
         try {
@@ -65,7 +64,26 @@ public class ProductoService {
     }
 
     public void exportExcel(String path, String fileXml) throws JAXBException, IOException, ParseException {
-        //TODO: Implementar
+        List<Producto> productos = productosDAOxml.getProductos(fileXml, FILE_XSD);
+
+        List <ProductoParaExcelEntity> data = new ArrayList<>();
+        for (Producto p : productos){
+            data.add(new ProductoParaExcelEntity(
+                    p.getCodigo(),
+                    p.getNumeroSerie(),
+                    p.getPrecio(),
+                    p.getDescuento(),
+                    p.getCostes().getCostesEnvio(),
+                    p.getCostes().getCostesAlmacenaje()
+                    )
+            );
+        }
+        try {
+            productosDAOxlsx.escribirProductos(path, data);
+
+        }catch (IOException e){
+            System.err.println(e.getMessage());
+        }
     }
 
     private List<ProductoEntity> setProductEntity(List<Producto> productos){
