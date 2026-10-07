@@ -12,19 +12,22 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 import generated.Producto;
+import org.educa.entity.ProductoParaExcelEntity;
 import org.educa.entity.SummaryEntity;
 import org.xml.sax.SAXException;
 
 public class ProductoService {
-    private static final String fileXSD = "src/main/resources/xsd/inventario_junio2026.xsd";
+    private static final String FILE_XSD = "src/main/resources/xsd/inventario_junio2026.xsd";
     private final ProductosDAO productosDAOxml = new ProductosDAOImplXML();
     private final ProductosDAO productosDAOtxt = new ProductosDAOImplTXT();
+    private final ProductosDAO productosDAOxlsx = new ProductosDAOImplXLSX();
 
     public List<ProductoEntity> readFile(String fileXml) throws JAXBException {
-        List<Producto> productos = productosDAOxml.getProductos(fileXml, fileXSD);
+        List<Producto> productos = productosDAOxml.getProductos(fileXml, FILE_XSD).getProducto();
 
         List<ProductoEntity> listaProductos = setProductEntity(productos);
 
@@ -84,6 +87,7 @@ public class ProductoService {
         String outputFile = new File(path, "result_" + date + ".xlsx").getPath();
 
         try {
+
             productosDAOxlsx.escribirProductos(outputFile, data);
 
         }catch (SAXException e){
