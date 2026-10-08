@@ -26,6 +26,12 @@ public class ProductoService {
     private final ProductosDAO productosDAOtxt = new ProductosDAOImplTXT();
     private final ProductosDAO productosDAOxlsx = new ProductosDAOImplXLSX();
 
+    /**
+     * Obtener datos de un fichero XML
+     * @param fileXml Ruta donde se encuentra el archivo XML
+     * @return Devuelve una lista con los productos
+     * @throws JAXBException Lanza la excepción si ocurre un error al procesar el XML
+     */
     public List<ProductoEntity> readFile(String fileXml) throws JAXBException {
         List<Producto> productos = productosDAOxml.getProductos(fileXml, FILE_XSD).getProducto();
 
@@ -34,6 +40,13 @@ public class ProductoService {
         return listaProductos;
     }
 
+    /**
+     * Exportar información de un XML a un TXT en formato factura
+     * @param path Ruta en la que se va crear el .txt
+     * @param fileXml Ruta donde se encuentra el archivo XML
+     * @throws JAXBException Lanza una excepción si ocurre un error al procesar el XML
+     * @throws IOException Lanza una excepción si el archivo no existe, no se puede leer o hay un error de acceso
+     */
     public void exportSummary(String path, String fileXml) throws JAXBException, IOException {
         String date = extractDate(fileXml);
 
@@ -66,6 +79,14 @@ public class ProductoService {
 
     }
 
+    /**
+     * Exportar infrmación de un XML a un XLSX
+     * @param path Ruta en la que se va crear el .xlsx
+     * @param fileXml Ruta donde se encuentra el archivo XML
+     * @throws JAXBException Lanza una excepción si ocurre un error al procesar el XML
+     * @throws IOException Lanza una excepción si el archivo no existe, no se puede leer o hay un error de acceso
+     * @throws ParseException Lanza una excepción si hay un error en algún formato al extraer el XML
+     */
     public void exportExcel(String path, String fileXml) throws JAXBException, IOException, ParseException {
         String date = extractDate(fileXml);
         List<Producto> productos = productosDAOxml.getProductos(fileXml, FILE_XSD).getProducto();
