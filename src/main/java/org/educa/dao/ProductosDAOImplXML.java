@@ -14,6 +14,7 @@ import java.io.File;
 import java.util.List;
 
 public class ProductosDAOImplXML implements ProductosDAO{
+
     @Override
     public Productos getProductos(String pathXml, String pathXsd) throws JAXBException {
         File xml = new File(pathXml);
