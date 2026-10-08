@@ -21,11 +21,6 @@ public class ProductosDAOImplTXT implements ProductosDAO{
         return null;
     }
 
-    /**
-     *
-     * @param date fecha obtenida del fichero original
-     * @param content Contenido a introducir en el fichero txt
-     */
     @Override
     public void escribirProductos(String date, Object content) throws IOException{
         File f = new File(PATH+date+".txt");
