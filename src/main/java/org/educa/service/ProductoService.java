@@ -70,9 +70,12 @@ public class ProductoService {
 //                append("Tamaño del fichero: ").append(size).append("bytes");
         SummaryEntity summary = new SummaryEntity(date, numeroProductos, beneficioTotal, fileXml, name, size);
 
+        path += date+".txt";
+
+
         try {
             // Se envía la entidad (no su representación en texto) porque el DAO espera un SummaryEntity
-            productosDAOtxt.escribirProductos(date, summary);
+            productosDAOtxt.escribirProductos(path, summary);
         } catch (SAXException e) {
             System.out.println(e.getMessage());
         }

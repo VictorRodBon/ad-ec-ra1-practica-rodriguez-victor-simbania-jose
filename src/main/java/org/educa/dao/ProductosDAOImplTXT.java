@@ -14,16 +14,14 @@ import java.util.List;
 
 
 public class ProductosDAOImplTXT implements ProductosDAO{
-    private static final String PATH = "src/main/resources/export/result_";
-
     @Override
     public Productos getProductos(String pathXml, String pathXsd) {
         return null;
     }
 
     @Override
-    public void escribirProductos(String date, Object content) throws IOException{
-        File f = new File(PATH+date+".txt");
+    public void escribirProductos(String path, Object content) throws IOException{
+        File f = new File(path);
 
 
         System.out.println("Fichero creado");
